@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CareerLens AI — Upload your resume and a job description to get an AI-powered match score, skill gap analysis, evidence-based insights, and personalized interview preparation.">
+  <meta name="theme-color" content="#5D7052">
+  <title>CareerLens AI — Resume & Job Fit Analyzer</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='50' fill='%235D7052'/><text x='50' y='68' font-size='52' font-weight='bold' fill='white' text-anchor='middle' font-family='serif'>C</text></svg>">
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER — Floating pill style (SANKET-inspired)
+       ================================================================ -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+
+      <!-- Logo -->
+      <a href="#" class="header__logo" id="header-logo">
+        <div class="header__logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+          </svg>
+        </div>
+        <span class="header__logo-text">CareerLens AI</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="header__nav" role="navigation" aria-label="Main navigation">
+        <a href="#" class="header__nav-link active" data-view="home">Analyze</a>
+        <a href="#" class="header__nav-link" data-view="how-it-works">How It Works</a>
+        <a href="#" class="header__nav-link" data-view="insights">Insights</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header__actions">
+        <button class="header__theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+          </svg>
+        </button>
+        <button class="btn btn--primary btn--sm header__cta" id="header-new-analysis">New Analysis</button>
+
+        <!-- Mobile hamburger -->
+        <button class="header__mobile-toggle" id="mobile-menu-toggle" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="#" class="mobile-nav__link active" data-view="home">Analyze</a>
+    <a href="#" class="mobile-nav__link" data-view="how-it-works">How It Works</a>
+    <a href="#" class="mobile-nav__link" data-view="insights">Insights</a>
+    <div class="mobile-nav__divider"></div>
+    <button class="btn btn--primary btn--lg" id="mobile-new-analysis" style="width:100%">New Analysis</button>
+  </div>
+
+
+  <!-- ================================================================
+       MAIN CONTENT — VIEWS
+       ================================================================ -->
+  <main role="main">
+
+    <!-- Home / Analyzer View -->
+    <div id="view-home" class="app-view"></div>
+
+    <!-- Processing View -->
+    <div id="view-processing" class="app-view hidden"></div>
+
+    <!-- Results View -->
+    <div id="view-results" class="app-view hidden"></div>
+
+    <!-- How It Works Page -->
+    <div id="view-how-it-works" class="app-view hidden"></div>
+
+    <!-- Insights Page -->
+    <div id="view-insights" class="app-view hidden"></div>
+
+  </main>
+
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__brand-name">CareerLens AI</div>
+          <div class="footer__brand-desc">AI Resume & Job Fit Analyzer</div>
+          <div class="footer__brand-tagline">Analyze smarter. Prepare better.</div>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Product</div>
+          <div class="footer__links">
+            <a href="#" class="footer__link" data-footer-nav="home">Analyze</a>
+            <a href="#" class="footer__link" data-footer-nav="how-it-works">How It Works</a>
+            <a href="#" class="footer__link" data-footer-nav="insights">Insights</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Legal</div>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Privacy</a>
+            <a href="#" class="footer__link">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        © 2026 CareerLens AI
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================================================================
+       TOAST CONTAINER
+       ================================================================ -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+
+  <!-- ================================================================
+       SCRIPTS — No mock-data needed anymore
+       ================================================================ -->
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Footer navigation handler -->
+  <script>
+    document.querySelectorAll('[data-footer-nav]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const view = link.dataset.footerNav;
+        App.navigateTo(view);
+      });
+    });
+  </script>
+
+</body>
+</html>

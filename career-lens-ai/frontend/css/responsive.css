@@ -1,0 +1,67 @@
+/* ==========================================================================
+   CareerLens AI — Responsive Styles
+   ========================================================================== */
+
+/* ---- Tablet & below ---- */
+@media (max-width: 768px) {
+  .header__nav { display: none; }
+  .header__cta { display: none; }
+  .header__mobile-toggle { display: flex; }
+
+  .hero { padding: 5rem 0 3rem; }
+  .hero__title { font-size: clamp(2rem, 7vw, 3rem); }
+  .hero__actions { flex-direction: column; }
+  .hero__actions .btn { width: 100%; }
+  .hero__trust { flex-direction: column; gap: 0.5rem; }
+
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .stats-bar__item:not(:last-child)::after { display: none; }
+  .stats-bar__inner { padding: 2rem 1.5rem; }
+
+  .analyzer__grid { grid-template-columns: 1fr; }
+
+  .how-steps { grid-template-columns: 1fr; }
+  .how-step-card,
+  .how-step-card:nth-child(1),
+  .how-step-card:nth-child(2),
+  .how-step-card:nth-child(3) {
+    border-radius: var(--radius-xl);
+  }
+
+  .score-breakdown { grid-template-columns: repeat(3, 1fr); }
+
+  .footer__inner { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .results__actions { flex-direction: column; }
+  .results__actions .btn { width: 100%; }
+
+  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+
+  .insights-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+  .header__inner { padding: 0.5rem 1rem; }
+  .header__logo-text { font-size: var(--text-base); }
+  .header__theme-btn { width: 2rem; height: 2rem; }
+
+  .hero { padding: 4rem 0 2rem; }
+  .hero__eyebrow { font-size: 0.625rem; }
+
+  .stats-bar__grid { grid-template-columns: 1fr 1fr; }
+  .stats-bar__value { font-size: var(--text-2xl); }
+
+  .score-ring { width: 10rem; height: 10rem; }
+  .score-ring__value { font-size: var(--text-4xl); }
+  .score-breakdown { grid-template-columns: repeat(2, 1fr); }
+
+  .upload { padding: 1.5rem 1rem; }
+
+  .processing { padding: 4rem 0; }
+
+  .skills-analysis__controls { flex-direction: column; }
+  .skills-search { width: 100%; }
+
+  .interview__filters { flex-direction: column; }
+}
