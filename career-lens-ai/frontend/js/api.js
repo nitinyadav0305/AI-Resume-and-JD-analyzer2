@@ -3,7 +3,7 @@
    Real backend communication layer.
    ========================================================================== */
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'https://ai-resume-and-jd-analyzer2-backend.onrender.com';
 
 /**
  * Submit resume and job description for analysis.
